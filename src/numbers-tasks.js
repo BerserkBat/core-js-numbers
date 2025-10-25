@@ -429,10 +429,10 @@ function getNumberValue(number) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(/* number */) {
-  throw new Error('Not implemented');
+function isNumber(number) {
+  const check = !Number.isNaN(number);
+  return typeof number === 'number' && check && number !== Infinity;
 }
-
 /**
  * Returns a boolean value indicating whether a number is an integer or not.
  *
@@ -444,8 +444,8 @@ function isNumber(/* number */) {
  * 5.1  => false
  * '5'  => false
  */
-function isInteger(/* number */) {
-  throw new Error('Not implemented');
+function isInteger(number) {
+  return Number.isInteger(number);
 }
 
 /**
